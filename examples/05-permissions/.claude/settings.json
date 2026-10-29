@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(**/.env)"
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "PowerShell(rm *)",
+      "PowerShell(Remove-Item *)"
+    ]
+  }
+}

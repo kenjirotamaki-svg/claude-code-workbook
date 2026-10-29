@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(**/.env)"
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "PowerShell(rm *)",
+      "PowerShell(Remove-Item *)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["<.claude フォルダのパス>/hooks/guard_new_file.py"]
+          }
+        ]
+      }
+    ]
+  }
+}
